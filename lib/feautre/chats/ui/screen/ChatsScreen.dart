@@ -26,6 +26,7 @@ class _ChatsState extends State<ChatsScreen> {
           children: [
             for(var item in state.chats)
               GestureDetector(
+                behavior: HitTestBehavior.opaque,
                 onTap: (){
                   final media = MediaQuery.of(context);
                   if (media.size.width > 500) {
