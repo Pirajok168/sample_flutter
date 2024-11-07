@@ -41,7 +41,7 @@ class _MainScreenState extends State<MainScreenChat> {
                 ),
               )
             else
-              const Expanded(child: RouterOutlet()),
+              const Expanded(child: ChatsScreen()),
             if (media.size.width > 500) const Expanded(child: RouterOutlet()),
           ],
         );
