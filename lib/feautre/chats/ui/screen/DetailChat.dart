@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../components/ImageUser.dart';
+import '../events/DetailChatEvents.dart';
 import '../events/MainScreenChatEvents.dart';
+import '../state/DetailChatState.dart';
 import '../state/MainScreenChatState.dart';
 
 class DetailChat extends StatefulWidget {
@@ -18,12 +20,8 @@ class _DetailChatState extends State<DetailChat> {
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<MainScreenChatEvents, MainScreenChatState>(
+    return BlocBuilder<DetailChatEvents, DetailChatState>(
       builder: (context, state) {
-        if (state.selectedChat == null) {
-          return const Placeholder();
-        }
-
         return Scaffold(
           appBar: AppBar(
             leading:  Row(
@@ -32,7 +30,7 @@ class _DetailChatState extends State<DetailChat> {
                 const SizedBox(
                   width: 8,
                 ),
-                Text(state.selectedChat!.name)
+                Text(state.selectedChat.name)
               ],
             ),
             leadingWidth: 120,
@@ -63,7 +61,7 @@ class _DetailChatState extends State<DetailChat> {
             child: ListView(
               reverse: true,
               children: [
-                for (var item in [state.selectedChat!.previewMessage])
+                for (var item in [state.selectedChat.previewMessage])
                   Row(
                     mainAxisAlignment: MainAxisAlignment.end,
                     children: [

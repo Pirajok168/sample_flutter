@@ -1,9 +1,6 @@
-
-
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-
-
+import 'package:flutter_modular/flutter_modular.dart';
 
 import '../../domain/repository/ChatsRepository.dart';
 import '../events/MainScreenChatEvents.dart';
@@ -20,37 +17,36 @@ class MainScreenChat extends StatefulWidget {
 class _MainScreenState extends State<MainScreenChat> {
   double _width = 200; // Начальная ширина
 
-
   @override
   Widget build(BuildContext context) {
     final media = MediaQuery.of(context);
     return Scaffold(
-      body: Builder(
-        builder: (context) {
-          return Row(
-            children: <Widget>[
-              if (media.size.width > 500)
-                GestureDetector(
-                  onHorizontalDragUpdate: (details) {
-                    setState(() {
-                      _width += details.delta.dx;
-                      _width = _width.clamp(200.0, 500.0); // Ограничиваем минимальную и максимальную ширину
-                    });
-                  },
-                  child: Container(
-                    width: _width,
-                    decoration: const BoxDecoration(border: Border(right: BorderSide())),
-                    child: const SizedBox(width: 300, child: ChatsScreen()),
-                  ),
-                )
-              else
-                const Expanded(child: ChatsScreen()),
-              if (media.size.width > 500) const Expanded(child: DetailChat()),
-            ],
-          );
-        }
-      ),
-      floatingActionButton: FloatingActionButton(onPressed: (){
+      body: NavigationListener(builder: (context, child) {
+        return Row(
+          children: <Widget>[
+            if (media.size.width > 500)
+              GestureDetector(
+                onHorizontalDragUpdate: (details) {
+                  setState(() {
+                    _width += details.delta.dx;
+                    _width = _width.clamp(200.0,
+                        500.0); // Ограничиваем минимальную и максимальную ширину
+                  });
+                },
+                child: Container(
+                  width: _width,
+                  decoration:
+                      const BoxDecoration(border: Border(right: BorderSide())),
+                  child: const SizedBox(width: 300, child: ChatsScreen()),
+                ),
+              )
+            else
+              const Expanded(child: RouterOutlet()),
+            if (media.size.width > 500) const Expanded(child: RouterOutlet()),
+          ],
+        );
+      }),
+      floatingActionButton: FloatingActionButton(onPressed: () {
         BlocProvider.of<MainScreenChatEvents>(context).addDialog();
       }),
     );
