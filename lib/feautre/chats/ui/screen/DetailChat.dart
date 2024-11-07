@@ -26,6 +26,9 @@ class _DetailChatState extends State<DetailChat> {
           appBar: AppBar(
             leading:  Row(
               children: [
+                IconButton(onPressed: () {
+                  Navigator.of(context).pop();
+                }, icon: Icon(Icons.arrow_back)),
                 const ImageUser(size: 30),
                 const SizedBox(
                   width: 8,
@@ -33,7 +36,7 @@ class _DetailChatState extends State<DetailChat> {
                 Text(state.selectedChat.name)
               ],
             ),
-            leadingWidth: 120,
+            leadingWidth: 220,
             elevation: 4,
           ),
           bottomNavigationBar: BottomAppBar(

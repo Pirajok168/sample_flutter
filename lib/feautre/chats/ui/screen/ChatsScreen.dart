@@ -27,8 +27,12 @@ class _ChatsState extends State<ChatsScreen> {
             for(var item in state.chats)
               GestureDetector(
                 onTap: (){
-
-                  Modular.to.navigate('/dialog/${item.id}');
+                  final media = MediaQuery.of(context);
+                  if (media.size.width > 500) {
+                    Modular.to.navigate('/dialog/${item.id}');
+                  } else {
+                    Modular.to.pushNamed('/fullscrenDialog/${item.id}');
+                  }
                 },
                 child: Padding(
                   padding: const EdgeInsets.all(8.0),

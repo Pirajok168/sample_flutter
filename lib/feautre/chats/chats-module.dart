@@ -31,5 +31,12 @@ class ChatsModule extends Module {
                   child: const DetailChat()),
               transition: TransitionType.noTransition),
         ]);
+
+    r.child('/fullscrenDialog/:id', child: (context) => BlocProvider(
+        create: (_) => DetailChatEvents(
+            repository: Modular.get<ChatRepository>(),
+            id: int.parse(r.args.params['id'])),
+        child: const DetailChat()),
+        transition: TransitionType.rightToLeft);
   }
 }
