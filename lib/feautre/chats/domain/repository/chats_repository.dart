@@ -1,6 +1,6 @@
 
 
-import 'package:first_lesson/feautre/chats/domain/model/Chats.dart';
+import 'package:first_lesson/feautre/chats/domain/model/chats_model.dart';
 
 class ChatRepository {
 

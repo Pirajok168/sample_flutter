@@ -1,8 +1,8 @@
 import 'package:bloc/bloc.dart';
-import 'package:first_lesson/feautre/chats/domain/model/Chats.dart';
+import 'package:first_lesson/feautre/chats/domain/model/chats_model.dart';
 
-import '../../domain/repository/ChatsRepository.dart';
-import '../state/MainScreenChatState.dart';
+import '../../domain/repository/chats_repository.dart';
+import '../state/main_screen_chat_state.dart';
 
 class MainScreenChatEvents extends Cubit<MainScreenChatState> {
   final ChatRepository repository;

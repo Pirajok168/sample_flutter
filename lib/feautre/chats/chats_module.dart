@@ -1,11 +1,11 @@
-import 'package:first_lesson/feautre/chats/ui/events/DetailChatEvents.dart';
-import 'package:first_lesson/feautre/chats/ui/events/MainScreenChatEvents.dart';
-import 'package:first_lesson/feautre/chats/ui/screen/DetailChat.dart';
-import 'package:first_lesson/feautre/chats/ui/screen/MainScreen.dart';
+import 'package:first_lesson/feautre/chats/ui/events/detail_chat_events.dart';
+import 'package:first_lesson/feautre/chats/ui/events/main_screen_chat_events.dart';
+import 'package:first_lesson/feautre/chats/ui/screen/detail_chat.dart';
+import 'package:first_lesson/feautre/chats/ui/screen/main_screen.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 
-import 'domain/repository/ChatsRepository.dart';
+import 'domain/repository/chats_repository.dart';
 
 class ChatsModule extends Module {
   @override

@@ -2,9 +2,9 @@
 
 
 import 'package:equatable/equatable.dart';
-import 'package:first_lesson/feautre/chats/domain/model/Chats.dart';
+import 'package:first_lesson/feautre/chats/domain/model/chats_model.dart';
 
-class MainScreenChatState {
+class MainScreenChatState extends Equatable {
   final List<Chats> chats;
 
   const MainScreenChatState({
@@ -26,5 +26,9 @@ class MainScreenChatState {
         chats: chats
     );
   }
+
+  @override
+  // TODO: implement props
+  List<Object?> get props => [];
 
 }

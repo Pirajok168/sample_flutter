@@ -1,8 +1,10 @@
 
 
-import '../../domain/model/Chats.dart';
+import 'package:equatable/equatable.dart';
 
-class DetailChatState {
+import '../../domain/model/chats_model.dart';
+
+class DetailChatState  extends Equatable{
   final Chats selectedChat;
 
   const DetailChatState({
@@ -15,4 +17,7 @@ class DetailChatState {
         selectedChat: selectedChat
     );
   }
+
+  @override
+  List<Object?> get props => [];
 }

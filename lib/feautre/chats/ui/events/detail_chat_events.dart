@@ -1,8 +1,8 @@
 
 import 'package:bloc/bloc.dart';
 
-import '../../domain/repository/ChatsRepository.dart';
-import '../state/DetailChatState.dart';
+import '../../domain/repository/chats_repository.dart';
+import '../state/detail_chat_state.dart';
 
 class DetailChatEvents extends Cubit<DetailChatState>{
 

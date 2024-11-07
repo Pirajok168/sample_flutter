@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'ImageUser.dart';
+import 'image_user.dart';
 
 class ChatItem extends StatelessWidget {
   final String titleMessage;
@@ -16,8 +16,8 @@ class ChatItem extends StatelessWidget {
         Row(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            ImageUser(size: 50),
-            SizedBox(
+            const ImageUser(size: 50),
+            const SizedBox(
               width: 8,
             ),
             Flexible(

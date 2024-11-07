@@ -1,7 +1,6 @@
 import 'package:flutter_modular/flutter_modular.dart';
 
-import '../feautre/chats/chats-module.dart';
-import '../feautre/chats/ui/screen/MainScreen.dart';
+import '../feautre/chats/chats_module.dart';
 
 class AppModule extends Module {
 
